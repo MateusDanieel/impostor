@@ -2,16 +2,21 @@ export const categories = [
     {
         id: "food",
         label: "Comidas",
-        words: ["Lasanha", "Pizza", "Hambúrguer", "Sushi", "Bolo", "Pastel", "Strogonoff", "Panqueca", "Torta", "Coxinha", "Esfiha", "Paçoca", "Cupcake"]
+        words: ["Lasanha", "Pizza", "Hambúrguer", "Sushi", "Bolo", "Pastel", "Strogonoff", "Panqueca", "Torta", "Coxinha", "Esfiha", "Paçoca", "Cupcake", "Escondidinho", "Macarrão", "Churros", "Pão de queijo", "Pão de alho", "Batata frita", "Feijoada", "Churrasco", "Brownie", "Croissant", "Baião de dois", "Maçã", "Manga", "Pêra", "Abacaxi", "Banana", "Mamão", "Uva", "Laranja", "Chocolate", "Presunto", "Queijo", "Burrito", "Tacos", "Beringela", "Parmegiana", "Linguiça"]
     },
     {
         id: "teams",
         label: "Times",
-        words: ["Corinthians", "Palmeiras", "Santos", "São Paulo", "Flamengo", "Fluminense", "Botafogo", "Cruzeiro", "Chapecoense", "Athletico Paranaense", "Bahia", "Bragantino", "Ceará", "Coritiba", "Fortaleza", "Goiás", "Grêmio", "Internacional", "Juventude", "Sport", "Vasco da Gama", "Barcelona", "Real Madrid", "Celta de Vigo", "Manchester United", "Liverpool", "Manchester City", "Juventus", "Arsenal", "Chelsea", "Shakhtar Donetsk", "Atlético Mineiro", "Atlético de Madrid", "Red Bull Leipzig", "Bayer Leverkusen", "Inter de Milão", "Napoli", "Milan", "Roma", "Inter Miami", "LA Galaxy", "Chivas Guadalajara", "Boca Juniors", "Atlético Nacional", "River Plate", "Peñarol", "Colo-Colo", "Tolima", "Talleres", "Independiente", "Lyon", "Paris Saint-Germain", "Tottenham", "Sporting Lisboa", "Porto", "Benfica", "Al-Hilal", "Al-Nasr", "Al-Ittihad", "Borussia Dortmund", "Real Betis"]
+        words: ["Corinthians", "Palmeiras", "Santos", "São Paulo", "Flamengo", "Fluminense", "Botafogo", "Cruzeiro", "Chapecoense", "Athletico Paranaense", "Bahia", "Bragantino", "Ceará", "Coritiba", "Fortaleza", "Goiás", "Grêmio", "Internacional", "Juventude", "Sport", "Vasco da Gama", "Barcelona", "Real Madrid", "Celta de Vigo", "Manchester United", "Liverpool", "Manchester City", "Juventus", "Arsenal", "Chelsea", "Shakhtar Donetsk", "Atlético Mineiro", "Atlético de Madrid", "Red Bull Leipzig", "Bayer Leverkusen", "Inter de Milão", "Napoli", "Milan", "Roma", "Inter Miami", "LA Galaxy", "Chivas Guadalajara", "Boca Juniors", "Atlético Nacional", "River Plate", "Peñarol", "Colo-Colo", "Tolima", "Talleres", "Independiente", "Lyon", "Paris Saint-Germain", "Tottenham", "Sporting Lisboa", "Porto", "Benfica", "Al-Hilal", "Al-Nasr", "Al-Ittihad", "Borussia Dortmund", "Real Betis", "Bayern München"]
     },
     {
         id: "famous",
         label: "Pessoas famosas",
-        words: ["Messi", "Cristiano Ronaldo", "LeBron James", "Kobe Bryant", "Michael Jordan", "Michael Jackson", "Brad Pitt", "Justin Bieber", "Vin Diesel", "Samuel L. Jackson", "Michael B. Jordan", "Wagner Moura", "Selton Melo", "Shakira", "Elon Musk", "Akira Toriyama", "Santos Dummond", "Monteiro Lobato", "Celso Portioli", "Silvio Santos", "Tim Maia", "Neymar"]
+        words: ["Messi", "Cristiano Ronaldo", "LeBron James", "Kobe Bryant", "Michael Jordan", "Michael Jackson", "Brad Pitt", "Justin Bieber", "Vin Diesel", "Samuel L. Jackson", "Michael B. Jordan", "Wagner Moura", "Selton Melo", "Shakira", "Elon Musk", "Akira Toriyama", "Santos Dummond", "Monteiro Lobato", "Celso Portioli", "Silvio Santos", "Tim Maia", "Neymar", "Renato Cariani", "Ramon Dino", "Renato Augusto", "Erick Wendel", "Gustavo Guanabara", "Chris Bumstead", "Ruyter", "Toguro", "Hideo Kojima", "Bill Gates", "Jeff Bezos", "Steve Jobs", "Anderson Silva", "Cléber 'Bambam'", "Popó Freitas", "Scarlett Johansson", "Henry Cavill"]
+    },
+    {
+        id: "dops",
+        label: "Funcionários da Dopster",
+        words: ["Fernanda", "Felipe", "Samya", "Agide", "Kauan", "Gabs", "Greg", "Jeong", "Marco", "Léo", "Amanda", "Mateus", "Guilherme", "Leoni", "Lucas", "Melanie", "Sergio", "Zé", "Welton", "Meroni", "Mari"]
     }
 ]
