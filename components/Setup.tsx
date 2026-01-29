@@ -1,19 +1,37 @@
+"use client";
+
 import { categories } from "@/data/categories";
+import { useState } from "react";
 
 export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostorCount, setImpostorCount }) => {
+
+    const [playerName, setPlayerName] = useState("");
+
+    function handleAddPlayer() {
+        if (playerName !== "") {
+            const novoPlayer = {
+                id: Date.now().toString(),
+                name: playerName,
+                alive: true
+            };
+
+            setPlayers([...players, novoPlayer]);
+            setPlayerName("");
+        }
+    }
+
     return (
         <>
-            <input type="text" />
-            <button type="button">Adicionar Jogador</button>
+            <input type="text" value={playerName} onChange={(e) => { setPlayerName(e.target.value) }} />
+            <button type="button" onClick={handleAddPlayer}>Adicionar Jogador</button>
 
             <table>
                 <tbody>
-                    <tr>
-                        <td>João</td>
-                        <td>
-                            <button type="button">Excluir</button>
-                        </td>
-                    </tr>
+                    {players.map((player) =>
+                        <tr key={player.id}>
+                            <td>{player.name}</td>
+                        </tr>
+                    )}
                 </tbody>
             </table>
 
