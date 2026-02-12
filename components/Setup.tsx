@@ -3,15 +3,22 @@
 import { categories } from "@/data/categories";
 import { useState } from "react";
 
-export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostorCount, setImpostorCount }) => {
+export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostorCount, setImpostorCount, setPhase, secretWord, setSecretWord }) => {
 
     const [playerName, setPlayerName] = useState("");
+    const hasCategory = categoryId !== "";
+    const hasEnoughPlayers = (impostorCount === 1 && players.length >= 4) || (impostorCount === 2 && players.length >= 6);
+    const canStart = hasCategory && hasEnoughPlayers;
 
     function handleAddPlayer() {
-        if (playerName !== "") {
+        const name = playerName.trim();
+
+        if (name === "") {
+            return;
+        } else {
             const novoPlayer = {
                 id: Date.now().toString(),
-                name: playerName,
+                name: name,
                 alive: true
             };
 
@@ -20,6 +27,21 @@ export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostor
         }
     }
 
+    function handleRemovePlayer(id) {
+        setPlayers(players.filter(p => p.id !== id));
+    }
+
+    function getSecretWord(id) {
+        const min = 0;
+        //const max = categories[id].words.length - 1;
+        const max = categories.map((cat) => cat.words.length - 1);
+        const i = Math.floor(Math.random() * (max - min + 1)) + min;
+    
+        setSecretWord(categories[id].words[i]);
+    }
+
+    console.log(secretWord);
+        
     return (
         <>
             <input type="text" value={playerName} onChange={(e) => { setPlayerName(e.target.value) }} />
@@ -30,12 +52,17 @@ export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostor
                     {players.map((player) =>
                         <tr key={player.id}>
                             <td>{player.name}</td>
+                            <td>
+                                <button type="button" onClick={() => handleRemovePlayer(player.id)}>
+                                    Deletar
+                                </button>
+                            </td>
                         </tr>
                     )}
                 </tbody>
             </table>
 
-            <select value={categoryId} onChange={(e) => setCategoryId(e.target.value)}>
+            <select value={categoryId} onChange={(e) => {setCategoryId(e.target.value); getSecretWord(e.target.value);}}>
                 <option value="" disabled>Selecione uma categoria</option>
                 {categories.map((cat) =>
                     <option key={cat.id} value={cat.id}>{cat.label}</option>
@@ -46,6 +73,10 @@ export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostor
                 <option value="1">1</option>
                 <option value="2">2</option>
             </select>
+
+            <button type="button" disabled={!canStart} onClick={() => setPhase("reveal")}>
+                Iniciar
+            </button>
         </>
     );
 }

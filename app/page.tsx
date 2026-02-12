@@ -11,7 +11,9 @@ export default function Home() {
   const [categoryId, setCategoryId] = useState<string>("");
   const [impostorCount, setImpostorCount] = useState<1 | 2>(1);
 
-  console.log(categoryId);
+  const [secretWord, setSecretWord] = useState(null);
+  const [impostorIds, setImpostorIds] = useState([]);
+  const [turnIndex, setTurnIndex] = useState(0);
 
   return (
     <>
@@ -23,6 +25,9 @@ export default function Home() {
           setCategoryId={setCategoryId}
           impostorCount={impostorCount}
           setImpostorCount={setImpostorCount}
+          setPhase={setPhase}
+          secretWord={secretWord}
+          setSecretWord={setSecretWord}
         />
       }
     </>
