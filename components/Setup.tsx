@@ -8,16 +8,24 @@ export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostor
     const [playerName, setPlayerName] = useState("");
 
     function handleAddPlayer() {
-        if (playerName !== "") {
+        const name = playerName.trim();
+
+        if (name === "") {
+            return;
+        } else {
             const novoPlayer = {
                 id: Date.now().toString(),
-                name: playerName,
+                name: name,
                 alive: true
             };
 
             setPlayers([...players, novoPlayer]);
             setPlayerName("");
         }
+    }
+
+    function handleRemovePlayer(id) {
+        setPlayers(players.filter(p => p.id !== id));
     }
 
     return (
@@ -30,6 +38,11 @@ export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostor
                     {players.map((player) =>
                         <tr key={player.id}>
                             <td>{player.name}</td>
+                            <td>
+                                <button type="button" onClick={() => handleRemovePlayer(player.id)}>
+                                    Deletar
+                                </button>
+                            </td>
                         </tr>
                     )}
                 </tbody>
