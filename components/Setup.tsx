@@ -3,7 +3,7 @@
 import { categories } from "@/data/categories";
 import { useState } from "react";
 
-export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostorCount, setImpostorCount, setPhase }) => {
+export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostorCount, setImpostorCount, setPhase, secretWord, setSecretWord }) => {
 
     const [playerName, setPlayerName] = useState("");
     const hasCategory = categoryId !== "";
@@ -31,6 +31,17 @@ export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostor
         setPlayers(players.filter(p => p.id !== id));
     }
 
+    function getSecretWord(id) {
+        const min = 0;
+        //const max = categories[id].words.length - 1;
+        const max = categories.map((cat) => cat.words.length - 1);
+        const i = Math.floor(Math.random() * (max - min + 1)) + min;
+    
+        setSecretWord(categories[id].words[i]);
+    }
+
+    console.log(secretWord);
+        
     return (
         <>
             <input type="text" value={playerName} onChange={(e) => { setPlayerName(e.target.value) }} />
@@ -51,7 +62,7 @@ export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostor
                 </tbody>
             </table>
 
-            <select value={categoryId} onChange={(e) => setCategoryId(e.target.value)}>
+            <select value={categoryId} onChange={(e) => {setCategoryId(e.target.value); getSecretWord(e.target.value);}}>
                 <option value="" disabled>Selecione uma categoria</option>
                 {categories.map((cat) =>
                     <option key={cat.id} value={cat.id}>{cat.label}</option>

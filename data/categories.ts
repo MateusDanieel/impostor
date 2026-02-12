@@ -2,12 +2,12 @@ export const categories = [
     {
         id: "food",
         label: "Comidas",
-        words: ["Lasanha", "Pizza", "Hambúrguer", "Sushi", "Bolo", "Pastel", "Strogonoff", "Panqueca", "Torta", "Coxinha", "Esfiha", "Paçoca", "Cupcake", "Escondidinho", "Macarrão", "Churros", "Pão de queijo", "Pão de alho", "Batata frita", "Feijoada", "Churrasco", "Brownie", "Croissant", "Baião de dois", "Maçã", "Manga", "Pêra", "Abacaxi", "Banana", "Mamão", "Uva", "Laranja", "Chocolate", "Presunto", "Queijo", "Burrito", "Tacos", "Beringela", "Parmegiana", "Linguiça"]
+        words: ["Lasanha", "Pizza", "Hambúrguer", "Sushi", "Bolo", "Pastel", "Strogonoff", "Panqueca", "Torta", "Coxinha", "Esfiha", "Paçoca", "Cupcake", "Escondidinho", "Macarrão", "Churros", "Pão de queijo", "Pão de alho", "Batata frita", "Feijoada", "Churrasco", "Brownie", "Croissant", "Baião de dois", "Maçã", "Manga", "Pêra", "Abacaxi", "Banana", "Mamão", "Uva", "Laranja", "Chocolate", "Presunto", "Queijo", "Burrito", "Tacos", "Beringela", "Parmegiana", "Linguiça", "Salsicha", "Purê de Batata", "Batata"]
     },
     {
         id: "teams",
         label: "Times",
-        words: ["Corinthians", "Palmeiras", "Santos", "São Paulo", "Flamengo", "Fluminense", "Botafogo", "Cruzeiro", "Chapecoense", "Athletico Paranaense", "Bahia", "Bragantino", "Ceará", "Coritiba", "Fortaleza", "Goiás", "Grêmio", "Internacional", "Juventude", "Sport", "Vasco da Gama", "Barcelona", "Real Madrid", "Celta de Vigo", "Manchester United", "Liverpool", "Manchester City", "Juventus", "Arsenal", "Chelsea", "Shakhtar Donetsk", "Atlético Mineiro", "Atlético de Madrid", "Red Bull Leipzig", "Bayer Leverkusen", "Inter de Milão", "Napoli", "Milan", "Roma", "Inter Miami", "LA Galaxy", "Chivas Guadalajara", "Boca Juniors", "Atlético Nacional", "River Plate", "Peñarol", "Colo-Colo", "Tolima", "Talleres", "Independiente", "Lyon", "Paris Saint-Germain", "Tottenham", "Sporting Lisboa", "Porto", "Benfica", "Al-Hilal", "Al-Nasr", "Al-Ittihad", "Borussia Dortmund", "Real Betis", "Bayern München"]
+        words: ["Corinthians", "Palmeiras", "Santos", "São Paulo", "Flamengo", "Fluminense", "Botafogo", "Cruzeiro", "Chapecoense", "Athletico Paranaense", "Bahia", "Red Bull Bragantino", "Ceará", "Coritiba", "Fortaleza", "Goiás", "Grêmio", "Internacional", "Juventude", "Sport", "Vasco da Gama", "Barcelona", "Real Madrid", "Celta de Vigo", "Manchester United", "Liverpool", "Manchester City", "Juventus", "Arsenal", "Chelsea", "Shakhtar Donetsk", "Atlético Mineiro", "Atlético de Madrid", "Red Bull Leipzig", "Bayer Leverkusen", "Inter de Milão", "Napoli", "Milan", "Roma", "Inter Miami", "LA Galaxy", "Chivas Guadalajara", "Boca Juniors", "Atlético Nacional", "River Plate", "Peñarol", "Colo-Colo", "Tolima", "Talleres", "Independiente", "Lyon", "Paris Saint-Germain", "Tottenham", "Sporting Lisboa", "Porto", "Benfica", "Al-Hilal", "Al-Nasr", "Al-Ittihad", "Borussia Dortmund", "Real Betis", "Bayern München", "Independiente Del Valle"]
     },
     {
         id: "famous",
@@ -17,6 +17,6 @@ export const categories = [
     {
         id: "dops",
         label: "Funcionários da Dopster",
-        words: ["Fernanda", "Felipe", "Samya", "Agide", "Kauan", "Gabs", "Greg", "Jeong", "Marco", "Léo", "Amanda", "Mateus", "Guilherme", "Leoni", "Lucas", "Melanie", "Sergio", "Zé", "Welton", "Meroni", "Mari"]
+        words: ["Fernanda", "Felipe", "Sâmya", "Agíde", "Kauan", "Gabs", "Greg", "Jeong", "Marco", "Léo", "Amanda", "Mateus", "Guilherme", "Leoni", "Lucas", "Melanie", "Sergio", "Zé", "Welton", "Meroni", "Mari", "Buzz Lighyear", "Among Us"]
     }
 ]
