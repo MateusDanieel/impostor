@@ -23,6 +23,7 @@ export default function Home() {
           setCategoryId={setCategoryId}
           impostorCount={impostorCount}
           setImpostorCount={setImpostorCount}
+          setPhase={setPhase}
         />
       }
     </>

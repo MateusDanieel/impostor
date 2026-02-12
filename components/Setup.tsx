@@ -3,9 +3,12 @@
 import { categories } from "@/data/categories";
 import { useState } from "react";
 
-export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostorCount, setImpostorCount }) => {
+export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostorCount, setImpostorCount, setPhase }) => {
 
     const [playerName, setPlayerName] = useState("");
+    const hasCategory = categoryId !== "";
+    const hasEnoughPlayers = (impostorCount === 1 && players.length >= 4) || (impostorCount === 2 && players.length >= 6);
+    const canStart = hasCategory && hasEnoughPlayers;
 
     function handleAddPlayer() {
         const name = playerName.trim();
@@ -59,6 +62,10 @@ export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostor
                 <option value="1">1</option>
                 <option value="2">2</option>
             </select>
+
+            <button type="button" disabled={!canStart} onClick={() => setPhase("reveal")}>
+                Iniciar
+            </button>
         </>
     );
 }
