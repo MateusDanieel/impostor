@@ -18,6 +18,8 @@ export default function Home() {
 
   function handleStartGame() {
     const category = categories.find((cat) => cat.id === categoryId);
+
+
     if (!category) return;
 
     const i = Math.floor(Math.random() * category.words.length);
