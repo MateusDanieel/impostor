@@ -12,11 +12,11 @@ export const categories = [
     {
         id: "famous",
         label: "Pessoas famosas",
-        words: ["Messi", "Cristiano Ronaldo", "LeBron James", "Kobe Bryant", "Michael Jordan", "Michael Jackson", "Brad Pitt", "Justin Bieber", "Vin Diesel", "Samuel L. Jackson", "Michael B. Jordan", "Wagner Moura", "Selton Melo", "Shakira", "Elon Musk", "Akira Toriyama", "Santos Dummond", "Monteiro Lobato", "Celso Portioli", "Silvio Santos", "Tim Maia", "Neymar", "Renato Cariani", "Ramon Dino", "Renato Augusto", "Erick Wendel", "Gustavo Guanabara", "Chris Bumstead", "Ruyter", "Toguro", "Hideo Kojima", "Bill Gates", "Jeff Bezos", "Steve Jobs", "Anderson Silva", "Cléber 'Bambam'", "Popó Freitas", "Scarlett Johansson", "Henry Cavill"]
+        words: ["Messi", "Cristiano Ronaldo", "LeBron James", "Kobe Bryant", "Michael Jordan", "Michael Jackson", "Brad Pitt", "Justin Bieber", "Vin Diesel", "Samuel L. Jackson", "Michael B. Jordan", "Wagner Moura", "Selton Melo", "Shakira", "Elon Musk", "Akira Toriyama", "Santos Dummond", "Monteiro Lobato", "Celso Portioli", "Silvio Santos", "Tim Maia", "Neymar", "Renato Cariani", "Ramon Dino", "Renato Augusto", "Erick Wendel", "Gustavo Guanabara", "Chris Bumstead", "Ruyter", "Toguro", "Hideo Kojima", "Bill Gates", "Jeff Bezos", "Steve Jobs", "Anderson Silva", "Cléber 'Bambam'", "Popó Freitas", "Scarlett Johansson", "Henry Cavill", "Masashi Kishimoto", "Linus Torvalds"]
     },
     {
         id: "dops",
-        label: "Funcionários da Dopster",
-        words: ["Fernanda", "Felipe", "Sâmya", "Agíde", "Kauan", "Gabs", "Greg", "Jeong", "Marco", "Léo", "Amanda", "Mateus", "Guilherme", "Leoni", "Lucas", "Melanie", "Sergio", "Zé", "Welton", "Meroni", "Mari", "Buzz Lighyear", "Among Us"]
+        label: "Dopster",
+        words: ["Fernanda", "Felipe", "Sâmya", "Agide", "Kauan", "Gabs", "Greg", "Jeong", "Marco", "Leo", "Amanda", "Mateus", "Guilherme", "Leoni", "Lucas", "Melanie", "Sergio", "Zé", "Welton", "Meroni", "Mari", "Murilo", "Buzz Lighyear", "Among Us", "Cordenas", "pip install p", "Mata Rato (Mouse Killer)", "Luke", "Miqueias", "Troféu Silvio Santos Peladinho", "Efraim"]
     }
 ]
