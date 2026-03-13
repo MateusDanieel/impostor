@@ -13,18 +13,38 @@ export default function Home() {
   const [impostorCount, setImpostorCount] = useState<1 | 2>(1);
 
   const [secretWord, setSecretWord] = useState<string | null>(null);
-  const [impostorIds, setImpostorIds] = useState([]);
+  const [impostorIds, setImpostorIds] = useState<string[]>([]);
   const [turnIndex, setTurnIndex] = useState(0);
 
   function handleStartGame() {
+    // set category
     const category = categories.find((cat) => cat.id === categoryId);
+
     if (!category) return;
 
+    // set secret word
     const i = Math.floor(Math.random() * category.words.length);
 
     const word = category.words[i];
 
     setSecretWord(word);
+
+    // set impostor qtd
+    const selectedImpostorIds: string[] = [];
+
+    while (selectedImpostorIds.length < impostorCount) {
+      const randomIndex = Math.floor(Math.random() * players.length);
+      const player = players[randomIndex];
+
+      if (!selectedImpostorIds.includes(player.id)) {
+        selectedImpostorIds.push(player.id);
+      }
+    }
+
+    setImpostorIds(selectedImpostorIds);
+
+    setTurnIndex(0);
+    setPhase("reveal");
   }
 
   return (
@@ -42,7 +62,7 @@ export default function Home() {
       }
 
       {phase === 'reveal' &&
-        <>Em construção</>
+        <>Em construção =]</>
       }
     </>
   );
