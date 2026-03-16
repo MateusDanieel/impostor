@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Phase, Player } from "@/types/game";
 import { Setup } from "@/components/Setup"
 import { categories } from "@/data/categories";
+import { Reveal } from "@/components/Reveal";
 
 export default function Home() {
 
@@ -17,19 +18,18 @@ export default function Home() {
   const [turnIndex, setTurnIndex] = useState(0);
 
   function handleStartGame() {
-    // set category
+
     const category = categories.find((cat) => cat.id === categoryId);
 
     if (!category) return;
 
-    // set secret word
-    const i = Math.floor(Math.random() * category.words.length);
+    const wordDrawnId = Math.floor(Math.random() * category.words.length);
 
-    const word = category.words[i];
+    const wordDrawn = category.words[wordDrawnId];
 
-    setSecretWord(word);
 
-    // set impostor qtd
+    setSecretWord(wordDrawn);
+
     const selectedImpostorIds: string[] = [];
 
     while (selectedImpostorIds.length < impostorCount) {
@@ -62,7 +62,14 @@ export default function Home() {
       }
 
       {phase === 'reveal' &&
-        <>Em construção =]</>
+        <Reveal
+          players={players}
+          turnIndex={turnIndex}
+          secretWord={secretWord}
+          impostorIds={impostorIds}
+          setTurnIndex={setTurnIndex}
+          setPhase={setPhase}
+        />
       }
     </>
   );
