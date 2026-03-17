@@ -11,6 +11,9 @@ export const Reveal = ({
     setPhase
 }) => {
     const player = players[turnIndex];
+
+    if (!player) return null;
+
     const isImpostor = impostorIds.includes(player.id);
     const [revealed, setRevealed] = useState(false);
 
@@ -19,10 +22,8 @@ export const Reveal = ({
             setTurnIndex(turnIndex + 1);
             setRevealed(false);
         } else {
-            setPhase("discussion");
+            setPhase("round");
         }
-
-
     }
 
     return (
@@ -32,9 +33,13 @@ export const Reveal = ({
             {revealed && (
                 <>
                     {isImpostor ? (
-                        <p>Você é o IMPOSTOR</p>
+                        <p>
+                            Você é o IMPOSTOR
+                        </p>
                     ) : (
-                        <p>A palavra é: <span className="uppercase">{secretWord}</span></p>
+                        <p>
+                            A palavra é: <span className="uppercase">{secretWord}</span>
+                        </p>
                     )}
                 </>
             )}

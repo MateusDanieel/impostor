@@ -71,6 +71,14 @@ export default function Home() {
           setPhase={setPhase}
         />
       }
+
+      {phase === "round" && (
+        <Round
+          players={players}
+          impostorIds={impostorIds}
+          secretWord={secretWord}
+        />
+      )}
     </>
   );
 }
