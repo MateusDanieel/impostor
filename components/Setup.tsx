@@ -3,7 +3,15 @@
 import { categories } from "@/data/categories";
 import { useState } from "react";
 
-export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostorCount, setImpostorCount, onStart }) => {
+export const Setup = ({
+    players,
+    setPlayers,
+    categoryId,
+    setCategoryId,
+    impostorCount,
+    setImpostorCount,
+    onStart
+}) => {
 
     const [playerName, setPlayerName] = useState("");
     const hasCategory = categoryId !== "";
