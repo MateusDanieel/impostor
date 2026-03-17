@@ -1,7 +1,7 @@
 "use client";
 
 import { categories } from "@/data/categories";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Setup = ({
     players,
@@ -32,6 +32,7 @@ export const Setup = ({
 
             setPlayers([...players, novoPlayer]);
             setPlayerName("");
+
         }
     }
 
@@ -42,7 +43,9 @@ export const Setup = ({
     return (
         <>
             <input type="text" value={playerName} onChange={(e) => { setPlayerName(e.target.value) }} />
-            <button type="button" onClick={handleAddPlayer}>Adicionar Jogador</button>
+            <button type="button" onClick={handleAddPlayer}>
+                Adicionar Jogador
+            </button>
 
             <table>
                 <tbody>

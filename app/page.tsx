@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Phase, Player } from "@/types/game";
 import { Setup } from "@/components/Setup"
 import { categories } from "@/data/categories";
 import { Reveal } from "@/components/Reveal";
+import { Round } from "@/components/Round";
 
 export default function Home() {
 
@@ -17,6 +18,20 @@ export default function Home() {
   const [impostorIds, setImpostorIds] = useState<string[]>([]);
   const [turnIndex, setTurnIndex] = useState(0);
 
+  useEffect(() => {
+    const saved = localStorage.getItem("players");
+
+    if (saved) {
+      const parsed = JSON.parse(saved);
+
+      setPlayers(parsed);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("players", JSON.stringify(players));
+  }, [players]);
+
   function handleStartGame() {
 
     const category = categories.find((cat) => cat.id === categoryId);
@@ -26,7 +41,6 @@ export default function Home() {
     const wordDrawnId = Math.floor(Math.random() * category.words.length);
 
     const wordDrawn = category.words[wordDrawnId];
-
 
     setSecretWord(wordDrawn);
 
@@ -75,8 +89,10 @@ export default function Home() {
       {phase === "round" && (
         <Round
           players={players}
-          impostorIds={impostorIds}
+          turnIndex={turnIndex}
           secretWord={secretWord}
+          impostorIds={impostorIds}
+          setPhase={setPhase}
         />
       )}
     </>
