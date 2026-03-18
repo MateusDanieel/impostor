@@ -89,10 +89,8 @@ export default function Home() {
       {phase === "round" && (
         <Round
           players={players}
-          turnIndex={turnIndex}
           secretWord={secretWord}
           impostorIds={impostorIds}
-          setPhase={setPhase}
         />
       )}
     </>

@@ -1,13 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import { Player } from "@/types/game";
+
+type RoundProps = {
+    players: Player[];
+    secretWord: string | null;
+    impostorIds: string[];
+};
 
 export const Round = ({
     players,
     secretWord,
-    impostorIds,
-    setPhase
-}) => {
+    impostorIds
+}: RoundProps) => {
 
     const player = Math.floor(Math.random() * players.length);
     const impostors = players.filter(player => impostorIds.includes(player.id));

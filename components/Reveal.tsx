@@ -1,6 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { Player, Phase } from "@/types/game";
+
+type RevealProps = {
+    players: Player[];
+    turnIndex: number;
+    secretWord: string | null;
+    impostorIds: string[];
+    setTurnIndex: (index: number) => void;
+    setPhase: (phase: Phase) => void;
+};
 
 export const Reveal = ({
     players,
@@ -9,7 +19,7 @@ export const Reveal = ({
     impostorIds,
     setTurnIndex,
     setPhase
-}) => {
+}: RevealProps) => {
     const player = players[turnIndex];
 
     if (!player) return null;
