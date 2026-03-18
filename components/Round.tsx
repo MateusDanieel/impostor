@@ -4,7 +4,6 @@ import { useState } from "react";
 
 export const Round = ({
     players,
-    turnIndex,
     secretWord,
     impostorIds,
     setPhase
@@ -16,7 +15,6 @@ export const Round = ({
 
     return (
         <>
-
             {!finished ? (
                 <>
                     <h2>
@@ -41,15 +39,20 @@ export const Round = ({
 
                     <h2>
                         E os impostores eram: <br />
-                        <span className="uppercase">
-
-                        </span>
+                        <ul className="uppercase">
+                            {impostors.map(player => (
+                                <li key={player.id}>
+                                    {player.name}
+                                </li>
+                            ))}
+                        </ul>
                     </h2>
+
+                    <button onClick={() => location.reload()}>
+                        Recomeçar
+                    </button>
                 </>
             )}
-
-
-
         </>
     );
 }
