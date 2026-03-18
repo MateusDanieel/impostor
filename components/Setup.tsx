@@ -1,7 +1,18 @@
 "use client";
 
 import { categories } from "@/data/categories";
+import { Player } from "@/types/game";
 import { useEffect, useState } from "react";
+
+type SetupProps = {
+    players: Player[];
+    setPlayers: React.Dispatch<React.SetStateAction<Player[]>>;
+    categoryId: string;
+    setCategoryId: React.Dispatch<React.SetStateAction<string>>;
+    impostorCount: 1 | 2;
+    setImpostorCount: React.Dispatch<React.SetStateAction<1 | 2>>;
+    onStart: () => void;
+};
 
 export const Setup = ({
     players,
@@ -11,7 +22,7 @@ export const Setup = ({
     impostorCount,
     setImpostorCount,
     onStart
-}) => {
+}: SetupProps) => {
 
     const [playerName, setPlayerName] = useState("");
     const hasCategory = categoryId !== "";
@@ -36,7 +47,7 @@ export const Setup = ({
         }
     }
 
-    function handleRemovePlayer(id) {
+    function handleRemovePlayer(id: string) {
         setPlayers(players.filter(p => p.id !== id));
     }
 
