@@ -1,4 +1,4 @@
-export type Phase = "setup" | "reveal" | "discussion" | "result";
+export type Phase = "setup" | "reveal" | "round";
 
 export type Player = {
     id: string;

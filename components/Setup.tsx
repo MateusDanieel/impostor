@@ -1,9 +1,17 @@
 "use client";
 
 import { categories } from "@/data/categories";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostorCount, setImpostorCount, onStart }) => {
+export const Setup = ({
+    players,
+    setPlayers,
+    categoryId,
+    setCategoryId,
+    impostorCount,
+    setImpostorCount,
+    onStart
+}) => {
 
     const [playerName, setPlayerName] = useState("");
     const hasCategory = categoryId !== "";
@@ -24,6 +32,7 @@ export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostor
 
             setPlayers([...players, novoPlayer]);
             setPlayerName("");
+
         }
     }
 
@@ -34,7 +43,9 @@ export const Setup = ({ players, setPlayers, categoryId, setCategoryId, impostor
     return (
         <>
             <input type="text" value={playerName} onChange={(e) => { setPlayerName(e.target.value) }} />
-            <button type="button" onClick={handleAddPlayer}>Adicionar Jogador</button>
+            <button type="button" onClick={handleAddPlayer}>
+                Adicionar Jogador
+            </button>
 
             <table>
                 <tbody>

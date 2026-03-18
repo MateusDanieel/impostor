@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Phase, Player } from "@/types/game";
 import { Setup } from "@/components/Setup"
 import { categories } from "@/data/categories";
+import { Reveal } from "@/components/Reveal";
+import { Round } from "@/components/Round";
 
 export default function Home() {
 
@@ -16,20 +18,32 @@ export default function Home() {
   const [impostorIds, setImpostorIds] = useState<string[]>([]);
   const [turnIndex, setTurnIndex] = useState(0);
 
+  useEffect(() => {
+    const saved = localStorage.getItem("players");
+
+    if (saved) {
+      const parsed = JSON.parse(saved);
+
+      setPlayers(parsed);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("players", JSON.stringify(players));
+  }, [players]);
+
   function handleStartGame() {
-    // set category
+
     const category = categories.find((cat) => cat.id === categoryId);
 
     if (!category) return;
 
-    // set secret word
-    const i = Math.floor(Math.random() * category.words.length);
+    const wordDrawnId = Math.floor(Math.random() * category.words.length);
 
-    const word = category.words[i];
+    const wordDrawn = category.words[wordDrawnId];
 
-    setSecretWord(word);
+    setSecretWord(wordDrawn);
 
-    // set impostor qtd
     const selectedImpostorIds: string[] = [];
 
     while (selectedImpostorIds.length < impostorCount) {
@@ -62,8 +76,25 @@ export default function Home() {
       }
 
       {phase === 'reveal' &&
-        <>Em construção =]</>
+        <Reveal
+          players={players}
+          turnIndex={turnIndex}
+          secretWord={secretWord}
+          impostorIds={impostorIds}
+          setTurnIndex={setTurnIndex}
+          setPhase={setPhase}
+        />
       }
+
+      {phase === "round" && (
+        <Round
+          players={players}
+          turnIndex={turnIndex}
+          secretWord={secretWord}
+          impostorIds={impostorIds}
+          setPhase={setPhase}
+        />
+      )}
     </>
   );
 }
