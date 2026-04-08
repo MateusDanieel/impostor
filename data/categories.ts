@@ -17,6 +17,6 @@ export const categories = [
     {
         id: "dops",
         label: "Dopster",
-        words: ["Fernanda", "Felipe", "Sâmya", "Agide", "Kauan", "Gabs", "Greg", "Jeong", "Marco", "Leo", "Amanda", "Mateus", "Guilherme", "Leoni", "Lucas", "Melanie", "Sergio", "Zé", "Welton", "Meroni", "Mari", "Murilo", "Copo do Buzz Lighyear", "Among Us", "Cordenas", "pip install p", "Mata Rato", "Luke", "Miquéias", "Troféu Silvio Santos Peladinho", "Efraim", "Ricardo", "Vampeta", "Luiz", "Vitória", "Jython", "Vibe Coding", "Lebronha"]
+        words: ["Fernanda", "Felipe M.", "Sâmya", "Agide", "Kauan", "Gabs", "Greg", "Jeong", "Marco", "Leo", "Amanda", "Mateus", "Guilherme", "Leoni", "Lucas", "Melanie", "Sergio", "Zé", "Welton", "Meroni", "Mari", "Murilo", "Copo do Buzz Lighyear", "Among Us", "Cordenas", "pip install p", "Mata Rato", "Luke", "Miquéias", "Troféu Silvio Santos Peladinho", "Efraim", "Ricardo", "Vampeta", "Luiz", "Vitória", "Jython", "Vibe Coding", "Lebronha", "Rui Patricio", "Raissa", "Ricardo"]
     }
 ]
